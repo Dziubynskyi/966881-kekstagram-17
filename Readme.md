@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм» [![Build status][travis-image]][travis-url]
 
 * Студент: [Юрий](https://up.htmlacademy.ru/javascript/17/user/966881).
-* Наставник: `Неизвестно`.
+* Наставник: `Вадим Шевяков`.
 
 ---
 
