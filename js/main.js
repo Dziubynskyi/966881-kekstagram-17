@@ -13,17 +13,17 @@ var USER_COMMENTS = [
 'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
 
-function GenerateRundomIndex(array) {
- if (array.length!=0){
- var rundomIndex = Math.floor(Math.random() * array.length);  // Math.floor(Math.random() * 10); // returns a random integer from 0 to 9
- return rundomIndex;
- }
- else{
-  console.log('Recieved array length is 0.'); // better create exception . I am printing this just for example
- }
-}
+//function GenerateRundomIndex(array) {
+//if (array.length!=0){
+// var rundomIndex = Math.floor(Math.random() * array.length);  // Math.floor(Math.random() * 10); // returns a random integer from 0 to 9
+//return rundomIndex;
+//}
+//else{
+// console.log('Recieved array length is 0.'); // better create exception . I am printing this just for example
+//}
+//}
 
-function GenerateIndexFromTo(from,to) {
+function generateIndexFromTo(from,to) {
   return Math.floor((Math.random() * to) + from);
 }
 
@@ -33,11 +33,11 @@ function DataConstructor (url,like,comment) {
     this.comment = comment;
 }
 
-function GenerateUsersData (){
+function generateUsersData (){
 for (var i = 0; i < myLength; i ++) {
     USERS_DATA.push(new DataConstructor('photos/' + (i + 1) + '.jpg', //generate url
-                                    GenerateIndexFromTo(15,200), //generate like
-                                    GenerateIndexFromTo(1,6))); //generate comment
+                                    generateIndexFromTo(15,200), //generate like
+                                    generateIndexFromTo(1,6))); //generate comment
 }
 }
 
@@ -58,7 +58,7 @@ var renderPicture = function (user) {
 
 
 var fragment = document.createDocumentFragment(); // cохраняю  эти картинки, лайки, комменты в обьект fragment
-GenerateUsersData(); //Create users object
+generateUsersData(); //Create users object
 
 for (var i = 0; i < USERS_DATA.length; i++) {
   fragment.appendChild(renderPicture(USERS_DATA[i]));//cоздаю эти картинки, лайки, комменты
